@@ -34,6 +34,8 @@ function getRandomPhraseAsArray(arr){
 //call the above function
 getRandomPhraseAsArray(phrases);
 
+const phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray); 
 
 //adds the letters of a string to the display
 function addPhraseToDisplay(arr){
@@ -45,7 +47,9 @@ function addPhraseToDisplay(arr){
   }
   return letters;
 }
-document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phrases)}</ul>`;
+document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phraseArray)}</ul>`;
+
+
 
 
 
