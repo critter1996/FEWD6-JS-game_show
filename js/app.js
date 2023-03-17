@@ -2,12 +2,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 //variables   
-const keys = document.querySelectorAll('qwerty');
-let phrase = document.getElementById('phrase');
+const keys = document.querySelector('#qwerty');
+let phrase = document.querySelector('#phrase');
 const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
-let phraseList = document.getElementById('#phraseList')
+let phraseList = document.querySelector('#phraseList')
 
 //listen for the start game button to be pressed 
 btnReset.addEventListener('click', () => {
@@ -26,16 +26,13 @@ const phrases = [
 
 //Create a getRandomPhraseAsArray function.
 function getRandomPhraseAsArray(arr){
-    //do stuff to any arr that is passed in 
-    for ( let i = 0; i < phrases.length; i++) {
-      Math.floor(Math.random(phrases[i])* phrases.length)
-      console.log(phrases[i])
+    //do stuff to any arr that is passed in
+    return arr[Math.floor(Math.random()*arr.length)];
     }
-} 
+
 
 //call the above function
 getRandomPhraseAsArray(phrases);
-
 
 
 //adds the letters of a string to the display
@@ -52,11 +49,11 @@ document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phrases)
 
 
 
-phrases.forEach((item)=>{
-  let li = document.createElement("li");
-  li.innerText = item;
-  list.appendChild(li);
-})
+// phrases.forEach((item)=>{
+//   let li = document.createElement("li");
+//   li.innerText = item;
+//   list.appendChild(li);
+// })
 
 
 //return a random phrase from an array
