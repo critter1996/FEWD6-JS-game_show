@@ -35,31 +35,39 @@ function getRandomPhraseAsArray(arr){
 getRandomPhraseAsArray(phrases);
 
 const phraseArray = getRandomPhraseAsArray(phrases);
-addPhraseToDisplay(phraseArray); 
+
 
 //adds the letters of a string to the display
 function addPhraseToDisplay(arr){
   // do stuff any arr that is passed in, and add to `#phrase ul`
   let letters = '';
+  let li = document.createElement('li');
+  
   for ( let i = 0; i < arr.length; i++ ) {
     letters += `<li>${ arr[i] }</li>`;
+    //li.appendChild('#phraseList');
 
     //if arr contains 'spaces' then add class .space else add class .letter; then append each new li to ul
-    if (arr.includes( ' ' )) {
+    if (li.textContent !== '') {
       //add class .space
-     phraseList.classList.add('space')
+     li.classList.add('space');
+     
     } else {
       //add class .letter
-      phraseList.classList.add('letter')
+      li.classList.add('letter');
     }
 
   }
+  phraseList.append('li')
   return letters;
+  
 }
+
+
 document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phraseArray)}</ul>`;
 
 
-
+addPhraseToDisplay(phraseArray); 
 
 // phrases.forEach((item)=>{
 //   let li = document.createElement("li");
@@ -71,9 +79,9 @@ document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phraseAr
 
 
 //check if a letter is in the phrase
-function checkLetter(button){
+//function checkLetter(button){
 
-}
+//}
 
 
 //check if the game has been won or lost
