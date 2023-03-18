@@ -44,11 +44,19 @@ function addPhraseToDisplay(arr){
   for ( let i = 0; i < arr.length; i++ ) {
     letters += `<li>${ arr[i] }</li>`;
 
+    //if arr contains 'spaces' then add class .space else add class .letter; then append each new li to ul
+    if (arr.includes( ' ' )) {
+      //add class .space
+     phraseList.classList.add('space')
+    } else {
+      //add class .letter
+      phraseList.classList.add('letter')
+    }
+
   }
   return letters;
 }
 document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phraseArray)}</ul>`;
-
 
 
 
@@ -60,16 +68,13 @@ document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phraseAr
 // })
 
 
-//return a random phrase from an array
-// const getRandomPhraseAsArray = arr => {
-
-// }
 
 
 //check if a letter is in the phrase
-// const checkLetter = button => {
+function checkLetter(button){
 
-// }
+}
+
 
 //check if the game has been won or lost
 // const checkWin = () => {
