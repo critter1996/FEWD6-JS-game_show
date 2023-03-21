@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //variables   
 const keys = document.querySelector('#qwerty');
-let phrase = document.querySelector('#phrase');
+//let phrase = document.querySelector('#phrase');
 const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
@@ -16,24 +16,25 @@ btnReset.addEventListener('click', () => {
 
 //array named phrases
 const phrases = [
-  'Rain clouds', 
-  'Cats are cool', 
-  'Wild goose chase', 
-  'In a pickle', 
-  'Later gator'
+  'Rain Clouds', 
+  'Cats are Cool', 
+  'Wild Goose Chase', 
+  'In a Pickle', 
+  'Later Gator'
 ];
 
 
 //Create a getRandomPhraseAsArray function.
 function getRandomPhraseAsArray(arr){
     //do stuff to any arr that is passed in
-    return arr[Math.floor(Math.random()*arr.length)];
-    }
+    let thisPhrase = arr[Math.floor(Math.random()*arr.length)];
+    thisPhrase = thisPhrase.split();
+    return thisPhrase;
+};
 
 
 //call the above function
 getRandomPhraseAsArray(phrases);
-
 const phraseArray = getRandomPhraseAsArray(phrases);
 
 
@@ -41,47 +42,38 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 function addPhraseToDisplay(arr){
   // do stuff any arr that is passed in, and add to `#phrase ul`
   let letters = '';
-  let li = document.createElement('li');
   
   for ( let i = 0; i < arr.length; i++ ) {
     letters += `<li>${ arr[i] }</li>`;
-    //li.appendChild('#phraseList');
+    let li = document.createElement('li');
+    li.textContent = arr[i];
+    phraseList.append('li');
 
     //if arr contains 'spaces' then add class .space else add class .letter; then append each new li to ul
-    if (li.textContent !== '') {
+    if (li.textContent !== ' ') {
       //add class .space
      li.classList.add('space');
      
     } else {
       //add class .letter
       li.classList.add('letter');
-    }
+    };
 
-  }
-  phraseList.append('li')
+  };
   return letters;
-  
-}
-
+};
 
 document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phraseArray)}</ul>`;
 
-
 addPhraseToDisplay(phraseArray); 
-
-// phrases.forEach((item)=>{
-//   let li = document.createElement("li");
-//   li.innerText = item;
-//   list.appendChild(li);
-// })
 
 
 
 
 //check if a letter is in the phrase
-//function checkLetter(button){
+function checkLetter(button){
 
-//}
+};
 
 
 //check if the game has been won or lost
