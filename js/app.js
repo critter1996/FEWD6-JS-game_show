@@ -72,7 +72,16 @@ addPhraseToDisplay(phraseArray);
 
 //check if a letter is in the phrase
 function checkLetter(button){
+let letterArray = document.getElementsByClassName('letter');
+let match = null;
 
+for (let i = 0; i < letterArray.length; i++) {
+  if (letterArray[i].textContent === button.textContent) {
+    match = letterArray[i];
+    match.classList.add('show');
+  }
+}
+return match;
 };
 
 
