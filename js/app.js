@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //variables   
 const keys = document.querySelector('#qwerty');
-//let phrase = document.querySelector('#phrase');
 const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
@@ -26,7 +25,6 @@ const phrases = [
 
 //Create a getRandomPhraseAsArray function.
 function getRandomPhraseAsArray(arr){
-    //do stuff to any arr that is passed in
     let thisPhrase = arr[Math.floor(Math.random()*arr.length)];
     thisPhrase = thisPhrase.split();
     return thisPhrase;
@@ -41,26 +39,27 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 //adds the letters of a string to the display
 function addPhraseToDisplay(arr){
   // do stuff any arr that is passed in, and add to `#phrase ul`
-  let letters = '';
+  let li = '';
   
   for ( let i = 0; i < arr.length; i++ ) {
-    letters += `<li>${ arr[i] }</li>`;
-    let li = document.createElement('li');
-    li.textContent = arr[i];
+    li += `<li>${ arr[i] }</li>`;
+    let newLi = document.createElement('li');
+    newLi.textContent = arr[i];
+    //ul append li (add li to ul)
     phraseList.append('li');
 
     //if arr contains 'spaces' then add class .space else add class .letter; then append each new li to ul
-    if (li.textContent !== ' ') {
+    if (newLi.textContent !== ' ') {
       //add class .space
-     li.classList.add('space');
+     newLi.classList.add('space');
      
     } else {
       //add class .letter
-      li.classList.add('letter');
+      newLi.classList.add('letter');
     };
 
   };
-  return letters;
+  return li;
 };
 
 document.querySelector('#phrase').innerHTML = `<ul>${addPhraseToDisplay(phraseArray)}</ul>`;
@@ -71,18 +70,18 @@ addPhraseToDisplay(phraseArray);
 
 
 //check if a letter is in the phrase
-function checkLetter(button){
-let letterArray = document.getElementsByClassName('letter');
+function checkLetter(button) {
+let letters = document.getElementsByClassName('.letter');
 let match = null;
-
-for (let i = 0; i < letterArray.length; i++) {
-  if (letterArray[i].textContent === button.textContent) {
-    match = letterArray[i];
+for (let i = 0; i < letters.length; i++) {
+  if (letters[i].textContent === button.textContent) {
+    match = button.textContent;
     match.classList.add('show');
-  }
 }
 return match;
+}
 };
+
 
 
 
@@ -91,14 +90,15 @@ keys.addEventListener('click', (e) => {
     let key = e.target;
     key.classList.add('chosen');
     key.disabled = true;
+    let letterFound = checkLetter(button);
+    if (letterFound = null) {
+      let tries = document.querySelector('.tries');
+      
+    }
 }});
 
-// Use a conditional to filter out clicks that don’t happen on the buttons or if the
-// button already has the “chosen” class
-// ❏ Add the “chosen” class to the button that was pressed.
-// ❏ Call the checkLetter function and store the results in a variable.
-// ❏ If the checkLetter function does not find a letter, remove one of the heart
-// images and increment the missed counter
+
+
 
 //check if the game has been won or lost
 // const checkWin = () => {
@@ -106,12 +106,6 @@ keys.addEventListener('click', (e) => {
 // }
 
 
-
-
-//listen for the on-screen keyboard to be clicked
-// keys.addEventListener('click', () => {
-//this is a function
-// });
 
 
 
