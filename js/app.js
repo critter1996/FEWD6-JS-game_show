@@ -85,6 +85,21 @@ return match;
 };
 
 
+
+keys.addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    let key = e.target;
+    key.classList.add('chosen');
+    key.disabled = true;
+}});
+
+// Use a conditional to filter out clicks that don’t happen on the buttons or if the
+// button already has the “chosen” class
+// ❏ Add the “chosen” class to the button that was pressed.
+// ❏ Call the checkLetter function and store the results in a variable.
+// ❏ If the checkLetter function does not find a letter, remove one of the heart
+// images and increment the missed counter
+
 //check if the game has been won or lost
 // const checkWin = () => {
 
