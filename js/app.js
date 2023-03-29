@@ -26,7 +26,7 @@ const phrases = [
 //Create a getRandomPhraseAsArray function.
 function getRandomPhraseAsArray(arr){
     let thisPhrase = arr[Math.floor(Math.random()*arr.length)];
-    thisPhrase = thisPhrase.split();
+    thisPhrase = thisPhrase.split('');
     return thisPhrase;
 };
 
