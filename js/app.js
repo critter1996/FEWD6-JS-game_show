@@ -25,7 +25,7 @@ const phrases = [
 
 //Create a getRandomPhraseAsArray function.
 function getRandomPhraseAsArray(arr){
-    let thisPhrase = arr[Math.floor(Math.random()*arr.length)];
+    let thisPhrase = phrases[Math.floor(Math.random()*phrases.length)];
     thisPhrase = thisPhrase.split('');
     return thisPhrase;
 };
@@ -40,7 +40,6 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 function addPhraseToDisplay(arr){
   // do stuff any arr that is passed in, and add to `#phrase ul`
   
-  
   for ( let i = 0; i < arr.length; i++ ) {
     let newLi = document.createElement('li');
     newLi.textContent = arr[i];
@@ -49,12 +48,12 @@ function addPhraseToDisplay(arr){
 
     //if arr contains 'spaces' then add class .space else add class .letter; then append each new li to ul
     if (newLi.textContent !== ' ') {
-      //add class .space
-     newLi.classList.add('space');
+      //add class letter
+     newLi.classList.add('letter');
      
     } else {
-      //add class .letter
-      newLi.classList.add('letter');
+      //add class space
+      newLi.classList.add('space');
     };
 
   };
@@ -69,32 +68,32 @@ addPhraseToDisplay(phraseArray);
 
 
 //check if a letter is in the phrase
-function checkLetter(button) {
-let letters = document.getElementsByClassName('.letter');
-let match = null;
-for (let i = 0; i < letters.length; i++) {
-  if (letters[i].textContent === button.textContent) {
-    match = button.textContent;
-    match.classList.add('show');
-}
-return match;
-}
-};
+// function checkLetter(button) {
+// let letters = document.getElementsByClassName('.letter');
+// let match = null;
+// for (let i = 0; i < letters.length; i++) {
+//   if (letters[i].textContent === button.textContent) {
+//     match = button.textContent;
+//     match.classList.add('show');
+// }
+// return match;
+// }
+// };
 
 
 
 
-keys.addEventListener('click', (e) => {
-  if (e.target.tagName === 'BUTTON') {
-    let key = e.target;
-    key.classList.add('chosen');
-    key.disabled = true;
-    let letterFound = checkLetter(button);
-    if (letterFound = null) {
-      let tries = document.querySelector('.tries');
+// keys.addEventListener('click', (e) => {
+//   if (e.target.tagName === 'BUTTON') {
+//     let key = e.target;
+//     key.classList.add('chosen');
+//     key.disabled = true;
+//     let letterFound = checkLetter(button);
+//     if (letterFound = null) {
+//       let tries = document.querySelector('.tries');
       
-    }
-}});
+//     }
+// }});
 
 
 
