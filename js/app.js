@@ -39,14 +39,13 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 //adds the letters of a string to the display
 function addPhraseToDisplay(arr){
   // do stuff any arr that is passed in, and add to `#phrase ul`
-  let li = '';
+  
   
   for ( let i = 0; i < arr.length; i++ ) {
-    li += `<li>${ arr[i] }</li>`;
     let newLi = document.createElement('li');
     newLi.textContent = arr[i];
     //ul append li (add li to ul)
-    phraseList.append('li');
+    phraseList.append('newLi');
 
     //if arr contains 'spaces' then add class .space else add class .letter; then append each new li to ul
     if (newLi.textContent !== ' ') {
