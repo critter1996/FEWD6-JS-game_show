@@ -65,17 +65,6 @@ return match;
 };
 
 
-// Count the missed guesses in the game.
-// If the checkLetter function returns a null value, the player has guessed the wrong letter. 
-// In the keyboard event listener, after checkLetter is called, 
-// write a statement to check the value of the letterFound variable. 
-// If the value is null, remove one of the tries from the scoreboard. 
-// If you haven't created it yet,
-//  make sure you have a missed variable to store the state of the scoreboard (initialized to 0). 
-//  When you remove a try from the scoreboard, make sure to increase the missed count by 1. 
-// Then change a liveHeart.png image to a lostHeart.png image.
-
-
  keys.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
     let key = e.target;
@@ -93,11 +82,33 @@ return match;
     }
 }});
 
-
+//Each time the player guesses a letter, this function will check whether the game has been won or lost. 
+//At the very end of the keyboard event listener, you’ll run this function to check if the number 
+//of letters with class “show” is equal to the number of letters with class “letters”. If they’re equal, 
 
 
 //check if the game has been won or lost
-// const checkWin = () => {
+const checkWin = () => {
+  let letterAmnt = document.querySelectorAll('.letter');
+  let shown = document.querySelectorAll('.show');
 
-// }
+  if (shown === letterAmnt ) {
+    //show the overlay screen with the “win” class and appropriate text. Display win overlay
+    //Create the win overlay by adding the “win” class to the start overlay.
+    //Change the headline text of the start overlay to show a person won.
+    //Change the display property of the overlay to “flex”
+
+  } else {
+    // Otherwise, if the number of misses is equal to or
+   //greater than 5, show the overlay screen with the “lose” class and appropriate text.
+//    Check if the missed counter is greater than 4. If they are, display the lose
+// overlay
+// ❏ Create the lose overlay by adding the “lose” class to the start overlay.
+// ❏ Change the headline text of the start overlay to show a person lost.
+// ❏ Change the display property of the overlay to “flex”
+
+  }
+}
+
+
 });
