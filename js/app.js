@@ -38,7 +38,7 @@ function addPhraseToDisplay(arr){
         newLi.textContent = arr[i];
         phrase.appendChild(newLi);
 
-        if (phrases[i] !== ' ') {
+        if (arr[i] !== ' ') {
             newLi.classList.add('letter'); 
        } else {
        newLi.classList.add('space');
@@ -65,14 +65,28 @@ return match;
 };
 
 
+// Count the missed guesses in the game.
+// If the checkLetter function returns a null value, the player has guessed the wrong letter. 
+// In the keyboard event listener, after checkLetter is called, 
+// write a statement to check the value of the letterFound variable. 
+// If the value is null, remove one of the tries from the scoreboard. 
+// If you haven't created it yet,
+//  make sure you have a missed variable to store the state of the scoreboard (initialized to 0). 
+//  When you remove a try from the scoreboard, make sure to increase the missed count by 1. 
+// Then change a liveHeart.png image to a lostHeart.png image.
+
+
  keys.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
     let key = e.target;
     key.classList.add('chosen');
     key.disabled = true;
     let letterFound = checkLetter(key);
+    
     if (letterFound = null) {
-      let tries = document.querySelector('.tries');
+      let tries = document.querySelectorAll('.tries img');
+      tries[missed].src = 'images/lostHeart.png';
+
       
     }
 }});
