@@ -40,8 +40,8 @@ function addPhraseToDisplay(arr){
 
         if (arr[i] !== ' ') {
             newLi.classList.add('letter'); 
-       } else {
-       newLi.classList.add('space');
+          } else {
+            newLi.classList.add('space');
         };
     };
 };
@@ -83,9 +83,11 @@ return match;
     key.disabled = true;
     let letterFound = checkLetter(key);
     
-    if (letterFound = null) {
+    if (letterFound === null) {
       let tries = document.querySelectorAll('.tries img');
       tries[missed].src = 'images/lostHeart.png';
+      missed++;
+
 
       
     }
