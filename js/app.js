@@ -75,10 +75,7 @@ return match;
     if (letterFound === null) {
       let tries = document.querySelectorAll('.tries img');
       tries[missed].src = 'images/lostHeart.png';
-      missed++;
-
-
-      
+      missed++; 
     }
 }});
 
@@ -90,15 +87,19 @@ return match;
 //check if the game has been won or lost
 const checkWin = () => {
   let letterAmnt = document.querySelectorAll('.letter');
-  let shown = document.querySelectorAll('.show');
+  let shown = document.querySelectorAll('show');
+  let info = document.querySelector('.title')
 
-  if (shown === letterAmnt ) {
+  if (shown.length === letterAmnt.length ) {
     //show the overlay screen with the “win” class and appropriate text. Display win overlay
     //Create the win overlay by adding the “win” class to the start overlay.
+    overlay.classList.add('win');
     //Change the headline text of the start overlay to show a person won.
+    info.textContent = 'Great Job! You Win!';
     //Change the display property of the overlay to “flex”
+    overlay.style.display = 'flex';
 
-  } else {
+  } //else {
     // Otherwise, if the number of misses is equal to or
    //greater than 5, show the overlay screen with the “lose” class and appropriate text.
 //    Check if the missed counter is greater than 4. If they are, display the lose
@@ -107,8 +108,11 @@ const checkWin = () => {
 // ❏ Change the headline text of the start overlay to show a person lost.
 // ❏ Change the display property of the overlay to “flex”
 
-  }
+ // }
+ console.log(letterAmnt, 'shown', 'info');
 }
+
+checkWin();
 
 
 });
