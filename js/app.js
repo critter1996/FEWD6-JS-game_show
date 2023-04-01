@@ -7,12 +7,9 @@ const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
 let phrase = document.querySelector('#phrase')
+//let letters = document.querySelectorAll('.letter');
 
 
-//listen for the start game button to be pressed 
-btnReset.addEventListener('click', () => {
-  overlay.style.display = 'none'; 
-});
 
 //array named phrases
 const phrases = [
@@ -65,6 +62,12 @@ return match;
 };
 
 
+//listen for the start game button to be pressed 
+btnReset.addEventListener('click', () => {
+  overlay.style.display = 'none'; 
+});
+
+
  keys.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
     let key = e.target;
@@ -86,8 +89,8 @@ return match;
 
 //check if the game has been won or lost
 const checkWin = () => {
-  let letterAmnt = document.querySelectorAll('.letter');
-  let shown = document.querySelectorAll('show');
+  let letterAmnt = document.getElementsByClassName('.letter');
+  let shown = document.querySelectorAll('.show');
   let info = document.querySelector('.title')
 
   if (shown.length === letterAmnt.length ) {
@@ -109,7 +112,7 @@ const checkWin = () => {
 // ❏ Change the display property of the overlay to “flex”
 
  // }
- console.log(letterAmnt, 'shown', 'info');
+
 }
 
 checkWin();
