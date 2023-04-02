@@ -7,9 +7,7 @@ const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
 let phrase = document.querySelector('#phrase')
-//let letters = document.querySelectorAll('.letter');
-
-
+let letters = document.querySelectorAll('.letter');
 
 //array named phrases
 const phrases = [
@@ -19,6 +17,12 @@ const phrases = [
   'In a Pickle', 
   'Later Gator'
 ];
+
+
+//listen for the start game button to be pressed 
+btnReset.addEventListener('click', () => {
+  overlay.style.display = 'none'; 
+});
 
 
 //Create a getRandomPhraseAsArray function.
@@ -62,12 +66,9 @@ return match;
 };
 
 
-//listen for the start game button to be pressed 
-btnReset.addEventListener('click', () => {
-  overlay.style.display = 'none'; 
-});
 
 
+//Listen for the on-screen keyboard to be clicked
  keys.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
     let key = e.target;
@@ -80,45 +81,50 @@ btnReset.addEventListener('click', () => {
       tries[missed].src = 'images/lostHeart.png';
       missed++; 
     }
-}});
+}
+checkWin();
+})
 
-//Each time the player guesses a letter, this function will check whether the game has been won or lost. 
-//At the very end of the keyboard event listener, you’ll run this function to check if the number 
-//of letters with class “show” is equal to the number of letters with class “letters”. If they’re equal, 
-
-
-//check if the game has been won or lost
+ //Each time the player guesses a letter, this function will check whether the game has been won or lost. 
 const checkWin = () => {
-  let letterAmnt = document.getElementsByClassName('.letter');
+  let letterAmnt = document.querySelectorAll('.letter');
   let shown = document.querySelectorAll('.show');
-  let info = document.querySelector('.title')
+  let title = document.querySelectorAll('.title');
 
-  if (shown.length === letterAmnt.length ) {
-    //show the overlay screen with the “win” class and appropriate text. Display win overlay
+
+  if ( letterAmnt.length === shown.length ) {
+    //Display win overlay
     //Create the win overlay by adding the “win” class to the start overlay.
-    overlay.classList.replace('win');
+    overlay.classList.add('win');
     //Change the headline text of the start overlay to show a person won.
-    info.textContent = 'Great Job! You Win!';
+    title.textContent = 'Great Job! You Win!';
     //Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
 
-  } else if (missed >= 5 ) {
+  } else if ( missed > 4 ) {
     // Otherwise, if the number of misses is equal to or
    //greater than 5, show the overlay screen with the “lose” class and appropriate text.
-   overlay.classList.replace('lose');
-//    Check if the missed counter is greater than 4. If they are, display the lose
+   overlay.classList.add('lose');
+// Check if the missed counter is greater than 4. If they are, display the lose
 // overlay
-// ❏ Create the lose overlay by adding the “lose” class to the start overlay.
-// ❏ Change the headline text of the start overlay to show a person lost.
-    info.textContent = 'Sorry, you lost';
+// Create the lose overlay by adding the “lose” class to the start overlay.
+// Change the headline text of the start overlay to show a person lost.
+    title.textContent = 'Sorry, you lost';
 // ❏ Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
-
-}
-
-}
-
+  }
+};
 checkWin();
 
 
+
+
+
+
+
+
+
+
+
+//End of wrap
 });
