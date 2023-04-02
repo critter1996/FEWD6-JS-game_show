@@ -96,22 +96,25 @@ const checkWin = () => {
   if (shown.length === letterAmnt.length ) {
     //show the overlay screen with the “win” class and appropriate text. Display win overlay
     //Create the win overlay by adding the “win” class to the start overlay.
-    overlay.classList.add('win');
+    overlay.classList.replace('win');
     //Change the headline text of the start overlay to show a person won.
     info.textContent = 'Great Job! You Win!';
     //Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
 
-  } //else {
+  } else if (missed >= 5 ) {
     // Otherwise, if the number of misses is equal to or
    //greater than 5, show the overlay screen with the “lose” class and appropriate text.
+   overlay.classList.replace('lose');
 //    Check if the missed counter is greater than 4. If they are, display the lose
 // overlay
 // ❏ Create the lose overlay by adding the “lose” class to the start overlay.
 // ❏ Change the headline text of the start overlay to show a person lost.
+    info.textContent = 'Sorry, you lost';
 // ❏ Change the display property of the overlay to “flex”
+    overlay.style.display = 'flex';
 
- // }
+}
 
 }
 
