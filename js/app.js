@@ -89,7 +89,7 @@ checkWin();
 const checkWin = () => {
   let letterAmnt = document.querySelectorAll('.letter');
   let shown = document.querySelectorAll('.show');
-  let title = document.querySelectorAll('.title');
+  let title = document.querySelector('.title');
 
 
   if ( letterAmnt.length === shown.length ) {
@@ -109,7 +109,7 @@ const checkWin = () => {
 // overlay
 // Create the lose overlay by adding the “lose” class to the start overlay.
 // Change the headline text of the start overlay to show a person lost.
-    title.textContent = 'Sorry, you lost';
+    title.textContent = 'Sorry, you lost!';
 // ❏ Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
   }
