@@ -7,7 +7,6 @@ const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
 let phrase = document.querySelector('#phrase')
-let letters = document.querySelectorAll('.letter');
 
 //array named phrases
 const phrases = [
@@ -94,30 +93,24 @@ const checkWin = () => {
 
   if ( letterAmnt.length === shown.length ) {
     //Display win overlay
-    //Create the win overlay by adding the “win” class to the start overlay.
     overlay.classList.add('win');
-    //Change the headline text of the start overlay to show a person won.
     title.textContent = 'Great Job! You Win!';
-    //Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
 
-  } else if ( missed > 4 ) {
     // Otherwise, if the number of misses is equal to or
    //greater than 5, show the overlay screen with the “lose” class and appropriate text.
-   overlay.classList.add('lose');
-// Check if the missed counter is greater than 4. If they are, display the lose
-// overlay
-// Create the lose overlay by adding the “lose” class to the start overlay.
-// Change the headline text of the start overlay to show a person lost.
+  } else if ( missed > 4 ) {
+    overlay.classList.add('lose');
     title.textContent = 'Sorry, you lost!';
-// ❏ Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
   }
 };
-checkWin();
 
 
-
+//Extra Credit 
+//Step 1 -> Create CSS transitions for each letter in the phrase display as they are revealed.
+//Step 2 -> Add a button to the “success” and “failure” screens that reset the game. 
+//You’ll have to recreate the buttons in the keyboard, generate a new random phrase, and set the number of misses to zero.
 
 
 
