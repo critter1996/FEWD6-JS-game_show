@@ -89,7 +89,12 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+
+ // background-color: rgb(209, 50, 185);
+  scale : (1.8);
+  transition: backround 2s;
 }
+
 
 .space {
   width: 15px;
@@ -98,7 +103,9 @@ button {
 .show {
   color: #000;
   background-color: #76CE82;
+
 }
+
 
 /* Keyboard */
 

@@ -80,6 +80,7 @@ return match;
       tries[missed].src = 'images/lostHeart.png';
       missed++; 
     }
+
 }
 checkWin();
 })
