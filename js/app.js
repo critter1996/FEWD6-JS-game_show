@@ -97,6 +97,7 @@ const checkWin = () => {
     overlay.classList.add('win');
     title.textContent = 'Great Job! You Win!';
     overlay.style.display = 'flex';
+    //Add start again button here
 
     // Otherwise, if the number of misses is equal to or
    //greater than 5, show the overlay screen with the “lose” class and appropriate text.
@@ -104,14 +105,19 @@ const checkWin = () => {
     overlay.classList.add('lose');
     title.textContent = 'Sorry, you lost!';
     overlay.style.display = 'flex';
+    //add start again button here
   }
 };
 
 
 //Extra Credit 
 //Step 1 -> Create CSS transitions for each letter in the phrase display as they are revealed.
+
 //Step 2 -> Add a button to the “success” and “failure” screens that reset the game. 
 //You’ll have to recreate the buttons in the keyboard, generate a new random phrase, and set the number of misses to zero.
+
+//1. add 2 start over buttons
+//2. 
 
 
 
