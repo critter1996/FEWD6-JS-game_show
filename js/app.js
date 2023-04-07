@@ -6,7 +6,7 @@ const keys = document.querySelector('#qwerty');
 const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
-let phrase = document.querySelector('#phrase')
+let phrase = document.querySelector('#phrase');
 
 //array named phrases
 const phrases = [
@@ -17,11 +17,6 @@ const phrases = [
   'Later Gator'
 ];
 
-
-//listen for the start game button to be pressed 
-btnReset.addEventListener('click', () => {
-  overlay.style.display = 'none'; 
-});
 
 
 //Create a getRandomPhraseAsArray function.
@@ -110,39 +105,47 @@ const checkWin = () => {
   }
 };
 
-//Reset Game
-btnReset.innerHTML = 'Start';
-overlay.classList.remove('win', 'lose');
-key.disabled = false;
-document.querySelector('#phrase ul').textContent = "";
 
-call phraseArray
+const restart = () => {
 
-chosen 
-chosen.disabled = false;
-chosen.classList.remove('chosen');
+ let key = e.target;
 
-tries = ?
+  for (i = 0; i < key.length; i++)
+  
+  if (btnReset.textContent === 'Start Over') {
+      //reset the overlay
+      overlay.classList.remove('win', 'lose');
 
-tries[missed].classList.remove('missed');
-tries[missed].classList.add('tries');
+      //reset the phrase
+      //document.querySelector('#phrase ul').textContent = '';
+      phrase.textContent = '';
+      //call phraseArray
+      addPhraseToDisplay(phraseArray);
+      //reset the tries
+      tries[missed].classList.remove('missed');
+      tries[missed].classList.add('tries');
+      missed = 0;
+      //reset the letters
+      key.disabled = false;
+      key.classList.remove('chosen');
+  }
+ 
+};
 
-missed = 0;
+//listen for the start game button to be pressed 
+btnReset.addEventListener('click', () => {
+  //restarts the game after win or lose
+  overlay.style.display = 'none'; 
+  restart();
+});
+
+
 
 //Extra Credit 
 //Step 1 -> Create CSS transitions for each letter in the phrase display as they are revealed.
 
 //Step 2 -> Add a button to the “success” and “failure” screens that reset the game. 
 //You’ll have to recreate the buttons in the keyboard, generate a new random phrase, and set the number of misses to zero.
-
-//1. add 2 start over buttons
-//2. 
-
-
-
-
-
-
 
 
 //End of wrap
