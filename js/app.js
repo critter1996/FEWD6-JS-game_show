@@ -98,7 +98,7 @@ const checkWin = () => {
     title.textContent = 'Great Job! You Win!';
     overlay.style.display = 'flex';
     //Add start again button here
-
+    btnReset.innerHTML = 'Start Over';
     // Otherwise, if the number of misses is equal to or
    //greater than 5, show the overlay screen with the “lose” class and appropriate text.
   } else if ( missed > 4 ) {
@@ -106,9 +106,28 @@ const checkWin = () => {
     title.textContent = 'Sorry, you lost!';
     overlay.style.display = 'flex';
     //add start again button here
+    btnReset.innerHTML = 'Start Over';
   }
 };
 
+//Reset Game
+btnReset.innerHTML = 'Start';
+overlay.classList.remove('win', 'lose');
+key.disabled = false;
+document.querySelector('#phrase ul').textContent = "";
+
+call phraseArray
+
+chosen 
+chosen.disabled = false;
+chosen.classList.remove('chosen');
+
+tries = ?
+
+tries[missed].classList.remove('missed');
+tries[missed].classList.add('tries');
+
+missed = 0;
 
 //Extra Credit 
 //Step 1 -> Create CSS transitions for each letter in the phrase display as they are revealed.
