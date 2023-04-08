@@ -109,6 +109,7 @@ const checkWin = () => {
 const restart = () => {
 
  let key = e.target;
+ let tries = document.querySelectorAll('.tries img');
 
   for (i = 0; i < key.length; i++)
   
