@@ -18,6 +18,13 @@ const phrases = [
 ];
 
 
+//listen for the start game button to be pressed 
+btnReset.addEventListener('click', () => {
+  //restarts the game after win or lose
+  overlay.style.display = 'none'; 
+  restart();
+});
+
 
 //Create a getRandomPhraseAsArray function.
 function getRandomPhraseAsArray(arr){
@@ -133,12 +140,7 @@ const restart = () => {
  
 };
 
-//listen for the start game button to be pressed 
-btnReset.addEventListener('click', () => {
-  //restarts the game after win or lose
-  overlay.style.display = 'none'; 
-  restart();
-});
+
 
 
 
