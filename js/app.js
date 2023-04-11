@@ -21,9 +21,12 @@ const phrases = [
 //listen for the start game button to be pressed 
 btnReset.addEventListener('click', () => {
   //restarts the game after win or lose
+
   overlay.style.display = 'none'; 
-  restart();
-});
+
+  if (btnReset.textContent === 'Start Over') {
+    restart();
+}});
 
 
 //Create a getRandomPhraseAsArray function.
@@ -74,7 +77,8 @@ return match;
   if (e.target.tagName === 'BUTTON') {
     let key = e.target;
     key.classList.add('chosen');
-    key.disabled = true;
+    key.setAttribute('disabled', '');
+    //key.disabled = true;
     let letterFound = checkLetter(key);
     
     if (letterFound === null) {
@@ -112,33 +116,66 @@ const checkWin = () => {
   }
 };
 
+///////////
 
-const restart = () => {
+function restart() {
+  document.querySelector('#phrase ul').textContent = '';
+  // let phraseArray = getRandomPhraseAsArray(phrases);
+  // addPhraseToDisplay(phraseArray);
 
- let key = e.target;
- let tries = document.querySelectorAll('.tries img');
+//clear the show list 
 
-  for (i = 0; i < key.length; i++)
-  
-  if (btnReset.textContent === 'Start Over') {
-      //reset the overlay
-      overlay.classList.remove('win', 'lose');
 
-      //reset the phrase
-      //document.querySelector('#phrase ul').textContent = '';
-      phrase.textContent = '';
-      //call phraseArray
-      addPhraseToDisplay(phraseArray);
-      //reset the tries
-      tries[missed].classList.remove('missed');
-      tries[missed].classList.add('tries');
-      missed = 0;
-      //reset the letters
-      key.disabled = false;
-      key.classList.remove('chosen');
+  document.querySelectorAll('.chosen').forEach(element => {
+      element.disabled = false;
+      element.classList.remove('chosen');
+  });
+  let tries = document.querySelectorAll('.tries img');
+  for (let i = 0; i < tries.length; i++) {
+      tries[i].src = 'images/liveHeart.png';
+      tries[i].classList.remove('missed');
+      tries[i].classList.add('tries');
   }
- 
+  missed = 0;
+
+  
 };
+
+
+
+///////////
+
+// const restart = () => {
+//   if (e.target.tagName === 'BUTTON') {
+//     let key = e.target;
+//     key.classList.add('chosen');
+//     key.disabled = true;
+
+//  let tries = document.querySelectorAll('.tries img');
+
+//   for (i = 0; i < key.length; i++)
+  
+//   if (btnReset.textContent === 'Start Over') {
+//       //reset the overlay
+//       overlay.classList.remove('win', 'lose');
+
+//       //reset the phrase
+//       //document.querySelector('#phrase ul').textContent = '';
+//       phrase.textContent = '';
+//       //call phraseArray
+//       addPhraseToDisplay(phraseArray);
+//       //reset the tries
+//       tries[missed].classList.remove('missed');
+//       tries[missed].classList.add('tries');
+//       missed = 0;
+//       //reset the letters
+//       key.disabled = false;
+//       key.classList.remove('chosen');
+//   }
+ 
+// };
+// };
+// restart();
 
 
 
