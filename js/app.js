@@ -116,30 +116,14 @@ const checkWin = () => {
   }
 };
 
-///////////
 
 function restart() {
 
-  //let newPhrase = document.querySelector('#phrase ul');
-  //newPhrase.textContent = '';
- // newPhrase.children.classList.remove('show');
-
  phrase.textContent = '';
-  
-  // let phraseArray = getRandomPhraseAsArray(phrases);
-  // addPhraseToDisplay(phraseArray);
-
-//clear the show list 
-// let newLetter = document.querySelectorAll('.show');
-// newLetter.classList.remove('show');
 
 let phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-
-//li.letter.show needs remove show
-
-//li.letter.show.classList.remove('show')
 
   document.querySelectorAll('.chosen').forEach(element => {
       element.disabled = false;
@@ -157,40 +141,6 @@ addPhraseToDisplay(phraseArray);
 };
 
 
-
-///////////
-
-// const restart = () => {
-//   if (e.target.tagName === 'BUTTON') {
-//     let key = e.target;
-//     key.classList.add('chosen');
-//     key.disabled = true;
-
-//  let tries = document.querySelectorAll('.tries img');
-
-//   for (i = 0; i < key.length; i++)
-  
-//   if (btnReset.textContent === 'Start Over') {
-//       //reset the overlay
-//       overlay.classList.remove('win', 'lose');
-
-//       //reset the phrase
-//       //document.querySelector('#phrase ul').textContent = '';
-//       phrase.textContent = '';
-//       //call phraseArray
-//       addPhraseToDisplay(phraseArray);
-//       //reset the tries
-//       tries[missed].classList.remove('missed');
-//       tries[missed].classList.add('tries');
-//       missed = 0;
-//       //reset the letters
-//       key.disabled = false;
-//       key.classList.remove('chosen');
-//   }
- 
-// };
-// };
-// restart();
 
 
 
