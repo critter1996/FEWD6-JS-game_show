@@ -120,11 +120,12 @@ const checkWin = () => {
 
 function restart() {
   document.querySelector('#phrase ul').textContent = '';
+  
   // let phraseArray = getRandomPhraseAsArray(phrases);
   // addPhraseToDisplay(phraseArray);
 
 //clear the show list 
-
+document.querySelectorAll('li').classList.remove('show');
 
   document.querySelectorAll('.chosen').forEach(element => {
       element.disabled = false;
