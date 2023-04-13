@@ -119,13 +119,27 @@ const checkWin = () => {
 ///////////
 
 function restart() {
-  document.querySelector('#phrase ul').textContent = '';
+
+  //let newPhrase = document.querySelector('#phrase ul');
+  //newPhrase.textContent = '';
+ // newPhrase.children.classList.remove('show');
+
+ phrase.textContent = '';
   
   // let phraseArray = getRandomPhraseAsArray(phrases);
   // addPhraseToDisplay(phraseArray);
 
 //clear the show list 
-document.querySelectorAll('li').classList.remove('show');
+// let newLetter = document.querySelectorAll('.show');
+// newLetter.classList.remove('show');
+
+let phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray);
+
+
+//li.letter.show needs remove show
+
+//li.letter.show.classList.remove('show')
 
   document.querySelectorAll('.chosen').forEach(element => {
       element.disabled = false;
