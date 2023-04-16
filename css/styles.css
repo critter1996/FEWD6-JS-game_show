@@ -99,22 +99,22 @@ button {
   width: 15px;
 }
 
-/* line 115, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 102, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .show {
-  color: #000;
-  background-color: aliceblue;
-  transition: all .6s;
-  font-size: var(--font-size-large);
+  color: #5b85b7;
+  background-color: #e2f0fc;
+  font-weight: 600;
+  transition: all .4s ease-in-out;
 }
 
 /* Keyboard */
-/* line 147, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 139, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .keyrow {
   display: flex;
   justify-content: center;
 }
 
-/* line 152, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 144, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .chosen {
   background: var(--color-neutral);
   border-radius: 5px;
@@ -122,7 +122,7 @@ button {
   color: #FFFFFF;
 }
 
-/* line 159, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 151, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .btn__reset {
   padding: 8px;
   margin: 50px auto;
@@ -132,7 +132,7 @@ button {
 }
 
 /* Overlay */
-/* line 169, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 161, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 #overlay {
   display: flex;
   flex-direction: column;
@@ -146,37 +146,37 @@ button {
   border-radius: 5px;
 }
 
-/* line 182, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 174, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .title {
   color: #FFF;
 }
 
-/* line 186, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 178, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .start {
   background-color: var(--color-start);
 }
 
-/* line 190, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 182, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .start a {
   color: var(--color-win);
 }
 
-/* line 194, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 186, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .win {
   background-color: var(--color-win);
 }
 
-/* line 198, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 190, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .win a {
   color: var(--color-win);
 }
 
-/* line 202, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 194, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .lose {
   background-color: var(--color-lose);
 }
 
-/* line 206, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
+/* line 198, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
 .lose a {
   color: var(--color-lose);
 }
