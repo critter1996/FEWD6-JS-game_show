@@ -1,184 +1,53 @@
 /* Main styles */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300");
 /* Variables */
-/* line 7, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-:root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
-  --color-start: #5b85b7;
-  --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
-  --color-keys: #37474F;
-  --color-keys-light: #E5E5E5;
-  --font-size-large: 60px;
-  --font-size-medium: 20px;
-  --transition: all .2s ease-in-out;
-  --color-letterbox-pink: #c125aa;
-}
+:root { --color-win: #78CF82; --color-lose: #D94545; --color-start: #5b85b7; --color-neutral: #445069; --color-neutral-light: #D2D2D2; --color-keys: #37474F; --color-keys-light: #E5E5E5; --font-size-large: 60px; --font-size-medium: 20px; --transition: all .2s ease-in-out; --color-letterbox-pink: #c125aa; }
 
 /* main */
-/* line 23, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* line 27, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-body {
-  justify-content: space-evenly;
-  flex-direction: column;
-  display: flex;
-  height: 100vh;
-}
+body { justify-content: space-evenly; flex-direction: column; display: flex; height: 100vh; }
 
-/* line 34, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-li, ol, ul {
-  padding: 0;
-  display: inline-block;
-}
+li, ol, ul { padding: 0; display: inline-block; }
 
-/* line 39, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-h2 {
-  margin: 0;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  font-size: var(--font-size-large);
-  margin: 0;
-}
+h2 { margin: 0; text-transform: uppercase; font-family: 'Open Sans', sans-serif; font-size: var(--font-size-large); margin: 0; }
 
-/* line 47, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-button {
-  margin: 6px;
-  border: 1px solid transparent;
-  padding: .5rem 1rem;
-  color: var(--color-keys);
-  font-size: var(--font-size-medium);
-  background-color: var(--color-keys-light);
-  border-radius: 5px;
-  -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
-  transition: var(--transition);
-}
+button { margin: 6px; border: 1px solid transparent; padding: .5rem 1rem; color: var(--color-keys); font-size: var(--font-size-medium); background-color: var(--color-keys-light); border-radius: 5px; -webkit-transition: var(--transition); -o-transition: var(--transition); transition: var(--transition); }
 
-/* line 60, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  max-height: 900px;
-  text-align: center;
-}
+.main-container { display: flex; flex-direction: column; justify-content: space-around; height: 100%; max-height: 900px; text-align: center; }
 
-/* line 69, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.section {
-  width: 100%;
-  padding: 10px;
-}
+.section { width: 100%; padding: 10px; }
 
 /* Title */
-/* line 76, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.header {
-  color: var(--color-start);
-}
+.header { color: var(--color-start); }
 
 /* Phrase */
-/* line 82, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.letter {
-  font-size: var(--font-size-medium);
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
-  color: transparent;
-  background: var(--color-neutral-light);
-  border-radius: 5px;
-}
+.letter { font-size: var(--font-size-medium); height: 65px; width: 65px; padding: 20px 1px 0 1px; margin-right: 2px; color: transparent; background: var(--color-neutral-light); border-radius: 5px; }
 
-/* line 97, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.space {
-  width: 15px;
-}
+.space { width: 15px; }
 
-/* line 102, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.show {
-  color: #5b85b7;
-  background-color: #e2f0fc;
-  font-weight: 600;
-  transition: all .4s ease-in-out;
-}
+.show { color: #4b7cb7; background-color: #e2f0fc; font-weight: 600; transition: all .4s ease-in-out; }
 
 /* Keyboard */
-/* line 139, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.keyrow {
-  display: flex;
-  justify-content: center;
-}
+.keyrow { display: flex; justify-content: center; }
 
-/* line 144, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.chosen {
-  background: var(--color-neutral);
-  border-radius: 5px;
-  font-size: var(--font-size-medium);
-  color: #FFFFFF;
-}
+.chosen { background: var(--color-neutral); border-radius: 5px; font-size: var(--font-size-medium); color: #FFFFFF; }
 
-/* line 151, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.btn__reset {
-  padding: 8px;
-  margin: 50px auto;
-  background: #FFFFFF;
-  border-radius: 5px;
-  font-size: var(--font-size-medium);
-}
+.btn__reset { padding: 8px; margin: 50px auto; background: #FFFFFF; border-radius: 5px; font-size: var(--font-size-medium); }
 
 /* Overlay */
-/* line 161, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-#overlay {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  color: #FFFFFF;
-  justify-content: center;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 5px;
-}
+#overlay { display: flex; flex-direction: column; position: fixed; color: #FFFFFF; justify-content: center; top: 0; bottom: 0; left: 0; right: 0; border-radius: 5px; }
 
-/* line 174, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.title {
-  color: #FFF;
-}
+.title { color: #FFF; }
 
-/* line 178, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.start {
-  background-color: var(--color-start);
-}
+.start { background-color: var(--color-start); }
 
-/* line 182, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.start a {
-  color: var(--color-win);
-}
+.start a { color: var(--color-win); }
 
-/* line 186, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.win {
-  background-color: var(--color-win);
-}
+.win { background-color: var(--color-win); }
 
-/* line 190, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.win a {
-  color: var(--color-win);
-}
+.win a { color: var(--color-win); }
 
-/* line 194, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.lose {
-  background-color: var(--color-lose);
-}
+.lose { background-color: var(--color-lose); }
 
-/* line 198, ../../Coding Projects/FEWD6-JS-game_show/sass/styles.scss */
-.lose a {
-  color: var(--color-lose);
-}
-
-/*# sourceMappingURL=styles.css.map */
+.lose a { color: var(--color-lose); }

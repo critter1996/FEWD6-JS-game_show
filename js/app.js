@@ -78,7 +78,6 @@ return match;
     let key = e.target;
     key.classList.add('chosen');
     key.setAttribute('disabled', '');
-    //key.disabled = true;
     let letterFound = checkLetter(key);
     
     if (letterFound === null) {
@@ -119,7 +118,7 @@ const checkWin = () => {
 
 function restart() {
 
- phrase.textContent = '';
+phrase.textContent = '';
 
 let phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
