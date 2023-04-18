@@ -99,7 +99,7 @@ const checkWin = () => {
 
   if ( letterAmnt.length === shown.length ) {
     //Display win overlay
-    overlay.classList.add('win');
+    overlay.className = 'win';
     title.textContent = 'Great Job! You Win!';
     overlay.style.display = 'flex';
     //Add start again button here
@@ -107,7 +107,7 @@ const checkWin = () => {
     // Otherwise, if the number of misses is equal to or
    //greater than 5, show the overlay screen with the “lose” class and appropriate text.
   } else if ( missed > 4 ) {
-    overlay.classList.add('lose');
+    overlay.className = 'lose';
     title.textContent = 'Sorry, you lost!';
     overlay.style.display = 'flex';
     //add start again button here
