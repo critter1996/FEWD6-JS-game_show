@@ -6,7 +6,7 @@ const keys = document.querySelector('#qwerty');
 const btnReset = document.querySelector('.btn__reset');
 let missed = 0;
 let overlay = document.querySelector('#overlay');
-let phrase = document.querySelector('#phrase');
+let ul = document.querySelector('ul');
 
 //array named phrases
 const phrases = [
@@ -41,7 +41,7 @@ function addPhraseToDisplay(arr){
     for ( let i = 0; i < arr.length; i++ ) {
         let newLi = document.createElement('li');
         newLi.textContent = arr[i];
-        phrase.appendChild(newLi);
+        ul.appendChild(newLi);
 
         if (arr[i] !== ' ') {
             newLi.classList.add('letter'); 
@@ -118,7 +118,7 @@ const checkWin = () => {
 
 function restart() {
 
-phrase.textContent = '';
+ul.textContent = '';
 
 let phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
